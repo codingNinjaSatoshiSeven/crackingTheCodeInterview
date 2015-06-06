@@ -11,7 +11,7 @@ var LinkedList = function() {
   this.head = null;
   this.tail = null;
   this.mid = null;
-  var size = 0;
+  this.size = 0;
 
 };
 LinkedList.prototype.addToTail = function(node) {
@@ -19,7 +19,7 @@ LinkedList.prototype.addToTail = function(node) {
     this.head = node;
     this.tail = node;
     this.mid = node;
-    size = 1; 
+    this.size = 1; 
   } else {
     var current = this.head;
     while (current.next !== null) {
@@ -27,9 +27,9 @@ LinkedList.prototype.addToTail = function(node) {
     }
     current.next = node;
     this.tail = node;
-    size++;
+    this.size++;
   }
-   var mid = Math.round(size/2);
+   var mid = Math.round(this.size/2);
    var counter = 1;
    var current = this.head;
    while (counter < mid) {

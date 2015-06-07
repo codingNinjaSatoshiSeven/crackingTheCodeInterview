@@ -1,0 +1,36 @@
+
+var Node = function(value) {
+  this.value = value;
+  this.next = null;
+}
+
+var LinkedList = function(){
+  this.head = null;
+  this.tail = null;
+}
+LinkedList.prototype.addToTail = function(node) {
+  if (this.head === null) {
+    this.head = node;
+    this.tail = node;
+  } else {
+    this.tail.next = node;
+    this.tail = node;
+  }
+}
+var findKthToLastElementOfLL = function(ll, k) {
+
+}
+
+var ll = new LinkedList();
+ll.addToTail(new Node(1));
+ll.addToTail(new Node(2));
+ll.addToTail(new Node(3));
+ll.addToTail(new Node(4));
+ll.addToTail(new Node(5));
+
+var current = ll.head;
+while (current.next !== null) {
+  console.log(current.value);
+  current = current.next;
+}
+console.log(current.value);

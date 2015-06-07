@@ -18,7 +18,25 @@ LinkedList.prototype.addToTail = function(node) {
   }
 }
 var findKthToLastElementOfLL = function(ll, k) {
+  if (k <= 0) {
+    return null;
+  }
+  var size = 0; 
+  var current = ll.head;
+  var result = [];
+  while (current.next !== null) {
+    size ++;
 
+    if (size === k) {
+      break;
+    }
+    current = current.next;  
+  }
+  while (current !== null) {
+      result.push(current.value);
+      current = current.next;
+  }
+  return result;
 }
 
 var ll = new LinkedList();
@@ -34,3 +52,6 @@ while (current.next !== null) {
   current = current.next;
 }
 console.log(current.value);
+console.log(findKthToLastElementOfLL(ll, 3));
+console.log(findKthToLastElementOfLL(ll, 1));
+console.log(findKthToLastElementOfLL(ll, 5));

@@ -18,3 +18,4 @@ var twoSum = function (array, target) {
 console.log(twoSum([1,2,3,4,8], 5));
 
 
+

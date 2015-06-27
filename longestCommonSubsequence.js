@@ -6,11 +6,11 @@ var longestCommonSubsequence = function(strA, strB) {
   var lenA = strA.length;
   var lenB = strB.length;
   var result = [];
-  for (var i = 0; i < lenA; i++) {
+  for (var i = 0; i <= lenA; i++) {
     result.push([]);
-    for (var j = 0; j < lenB; j++) {
+    for (var j = 0; j <= lenB; j++) {
       if (i === 0 || j === 0) {
-        result[i][j] = 1;
+        result[i][j] = 0;
       } else if (strA[i-1] === strB[j-1]) {
         result[i][j] = result[i-1][j-1] +1;
       } else {
@@ -18,7 +18,8 @@ var longestCommonSubsequence = function(strA, strB) {
       }
     }
   }
-  return result[lenA-1][lenB-1];
+  return result[lenA][lenB];
 };
 
 console.log(longestCommonSubsequence('ABCDGH','AEDFHR'));
+console.log(longestCommonSubsequence('AGGTAB','GXTXAYB'));
